@@ -1,71 +1,38 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import {
-  AiFillGithub,
-  AiOutlineTwitter,
-  AiFillInstagram,
-} from "react-icons/ai";
-import { FaLinkedinIn } from "react-icons/fa";
+import React, { Component } from "react";
 
-function Footer() {
-  let date = new Date();
-  let year = date.getFullYear();
-  return (
-    <Container fluid className="footer">
-      <Row>
-        <Col md="4" className="footer-copywright">
-          <h3>Designed and Developed by Soumyajit Behera</h3>
-        </Col>
-        <Col md="4" className="footer-copywright">
-          <h3>Copyright © {year} SB</h3>
-        </Col>
-        <Col md="4" className="footer-body">
-          <ul className="footer-icons">
-            <li className="social-icons">
-              <a
-                href="https://github.com/soumyajit4419"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <AiFillGithub />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://twitter.com/Soumyajit4419"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <AiOutlineTwitter />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://www.linkedin.com/in/soumyajit4419/"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <FaLinkedinIn />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://www.instagram.com/soumyajit4419"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <AiFillInstagram />
-              </a>
-            </li>
-          </ul>
-        </Col>
-      </Row>
-    </Container>
-  );
+class Footer extends Component {
+  render() {
+    if (this.props.sharedBasicInfo) {
+      var networks = this.props.sharedBasicInfo.social.map(function (network) {
+        return (
+          <span key={network.name} className="m-4">
+            <a href={network.url} target="_blank" rel="noopener noreferrer">
+              <i className={network.class}></i>
+            </a>
+          </span>
+        );
+      });
+    }
+
+    return (
+      <footer>
+        <div className="col-md-12">
+          <div className="social-links">{networks}</div>
+
+          <div className="copyright py-4 text-center">
+            <div className="container">
+              <small>
+                Copyright &copy;{" "}
+                {this.props.sharedBasicInfo
+                  ? this.props.sharedBasicInfo.name
+                  : "???"}
+              </small>
+            </div>
+          </div>
+        </div>
+      </footer>
+    );
+  }
 }
 
 export default Footer;
