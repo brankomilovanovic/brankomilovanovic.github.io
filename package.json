@@ -20,7 +20,6 @@
     "start": "react-scripts start",
     "build": "node-sass --source-map true public/css/scss/main.scss public/css/style.css & react-scripts build",
     "sass": "sass public/css/scss/main.scss:public/css/style.css --watch",
-    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
