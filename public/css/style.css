@@ -1,0 +1,27 @@
+body {
+  font-family: "Roboto", sans-serif;
+  color: black;
+  background: white;
+  margin: 0;
+}
+
+#root {
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.header {
+  border-bottom: 1px solid gray;
+}
+.header .navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+.header .navbar-container .navbar-links-container {
+  display: flex;
+  gap: 5px;
+}
+
+/*# sourceMappingURL=style.css.map */
