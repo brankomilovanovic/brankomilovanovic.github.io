@@ -40,7 +40,7 @@ const Home = () => {
         <span style={{ fontSize: "24px" }}>
           Welcome to my portfolio website
         </span>
-        <div style={{ width: "80%", marginTop: "50px" }}>
+        <div style={{ width: "80%", marginTop: "50px", zIndex: "-1" }}>
           <span style={{ fontSize: "24px" }}>Working in progress...</span>
 
           <LinearProgress

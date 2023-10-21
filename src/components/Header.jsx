@@ -34,7 +34,7 @@ const Header = () => {
     <div className="header">
       <div className="navbar-container">
         <NavLink to={"/"} className="navbar-name">
-          Branko Milovanovic
+          Branko Milovanović
         </NavLink>
         <div
           ref={navbarRef}
