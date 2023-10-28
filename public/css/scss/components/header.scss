@@ -8,6 +8,7 @@
     align-items: center;
     justify-content: space-between;
     margin: 10px;
+    position: relative;
 
     .navbar-links-container {
       display: flex;
@@ -59,12 +60,23 @@
     }
 
     .navbar-name {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      font-size: 20px;
       color: $white;
-      font-size: 24px;
-      font-weight: 600;
-      &:hover {
-        text-decoration: none;
-        cursor: pointer;
+      text-transform: uppercase;
+
+      &::before {
+        content: attr(data-text);
+        position: absolute;
+        width: 0;
+        height: 100%;
+        color: yellow;
+        border-right: 3px solid black;
+        overflow: hidden;
+        animation: animate 5s ease infinite;
+        white-space: nowrap;
       }
     }
 
@@ -115,5 +127,12 @@
   }
   to {
     transform: translateY(0);
+  }
+}
+
+@keyframes animate {
+  50%,
+  70% {
+    width: 100%;
   }
 }

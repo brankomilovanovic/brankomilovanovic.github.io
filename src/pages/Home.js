@@ -1,11 +1,31 @@
 import { LinearProgress } from "@mui/material";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { TypeAnimation } from "react-type-animation";
+
+const animations = [
+  {
+    className: "background",
+  },
+  {
+    className: "background",
+    style: {
+      animationDirection: "alternate-reverse",
+      animationDuration: "4s",
+    },
+  },
+  {
+    className: "background",
+    style: {
+      animationDuration: "5s",
+    },
+  },
+];
 
 const Home = () => {
   const progressRef = useRef(null);
 
-  const [progress, setProgress] = React.useState(30);
-  const [buffer, setBuffer] = React.useState(10);
+  const [progress, setProgress] = useState(30);
+  const [buffer, setBuffer] = useState(10);
 
   useEffect(() => {
     progressRef.current = () => {
@@ -26,17 +46,47 @@ const Home = () => {
     };
   }, []);
 
+  const renderBackgroundAnimations = () => {
+    return (
+      <>
+        {animations.map((animation, index) => (
+          <div
+            key={index}
+            className={animation?.className}
+            style={animation?.style}
+          />
+        ))}
+      </>
+    );
+  };
+
   return (
     <div className="home">
+      {renderBackgroundAnimations()}
+
       <div
         style={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          paddingTop: "50px",
+          paddingTop: "100px",
         }}
       >
-        <span style={{ fontSize: "24px" }}>Hi, I'm Branko Milovanović</span>
+        <TypeAnimation
+          sequence={[
+            "Hi, I'm a Branko Milovanović",
+            3000,
+            "Hi, I'm a Web Developer",
+            3000,
+            "Hi, I'm a Full Stack Developer",
+            3000,
+          ]}
+          wrapper="span"
+          style={{ fontSize: "24px" }}
+          speed={5}
+          deletionSpeed={20}
+          repeat={Infinity}
+        />
         <span style={{ fontSize: "24px" }}>
           Welcome to my portfolio website
         </span>

@@ -33,8 +33,10 @@ const Header = () => {
   return (
     <div className="header">
       <div className="navbar-container">
-        <NavLink to={"/"} className="navbar-name">
-          Branko Milovanović
+        <NavLink to={"/"}>
+          <span data-text="Branko Milovanović" className="navbar-name">
+            Branko Milovanović
+          </span>
         </NavLink>
         <div
           ref={navbarRef}
