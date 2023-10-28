@@ -82,7 +82,7 @@ const Home = () => {
             3000,
           ]}
           wrapper="span"
-          style={{ fontSize: "24px" }}
+          style={{ fontSize: "24px", zIndex: -1 }}
           speed={5}
           deletionSpeed={20}
           repeat={Infinity}

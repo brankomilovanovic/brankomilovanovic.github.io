@@ -78,11 +78,17 @@ const Header = () => {
           <IconButton
             onClick={() => setToggleMobileMenu((prevState) => !prevState)}
           >
-            {!toggleMobileMenu ? (
-              <img src="/assets/images/hamburger-menu.svg" />
-            ) : (
-              <img src="/assets/images/close.svg" />
-            )}
+            <img
+              src={
+                !toggleMobileMenu
+                  ? "/assets/images/hamburger-menu.svg"
+                  : "/assets/images/close.svg"
+              }
+              style={{
+                transition: "transform 0.3s ease",
+                transform: toggleMobileMenu && "rotate(180deg)",
+              }}
+            />
           </IconButton>
         </div>
       </div>
