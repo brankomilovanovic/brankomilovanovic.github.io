@@ -65,16 +65,8 @@ a {
       font-size: 20px;
       color: #ffffff;
       text-transform: uppercase; }
-      .header .navbar-container .navbar-name::before {
-        content: attr(data-text);
-        position: absolute;
-        width: 0;
-        height: 100%;
-        color: yellow;
-        border-right: 3px solid black;
-        overflow: hidden;
-        animation: animate 5s ease infinite;
-        white-space: nowrap; }
+      .header .navbar-container .navbar-name:hover {
+        cursor: pointer; }
     @media only screen and (max-width: 840px) {
       .header .navbar-container .navbar-links-container {
         display: flex;
@@ -113,10 +105,43 @@ a {
   70% {
     width: 100%; } }
 
-.home {
+#home {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+
+#about-me {
+  height: 100%; }
+  #about-me .content-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 45px; }
+
+#projects {
+  height: 100%; }
+  #projects .content-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 45px; }
+
+#contact-me {
+  height: 100%; }
+  #contact-me .content-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 45px; }
+
+.main-container {
   height: 100vh; }
-  .home .background {
-    animation: slide 3s ease-in-out infinite alternate;
+  .main-container .background {
+    animation: slide 11s ease-in-out infinite alternate;
     background-image: linear-gradient(235deg, #121212 50%, #1e1e1e 50%);
     bottom: 0;
     left: -50%;
