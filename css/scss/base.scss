@@ -13,6 +13,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1 {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 20px;
+  margin: 0 0 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 #root {
   overflow-y: auto;
   height: 100vh;
@@ -23,4 +31,10 @@ a {
   &:hover {
     text-decoration: underline;
   }
+}
+
+.delimiter {
+  background-color: $white;
+  width: 100%;
+  height: 1px;
 }

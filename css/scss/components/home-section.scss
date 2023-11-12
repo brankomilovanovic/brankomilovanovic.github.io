@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  scroll-snap-align: start;
 
   .content-container {
     display: flex;

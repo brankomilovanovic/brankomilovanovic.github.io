@@ -60,25 +60,6 @@
     }
 
     .navbar-name {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      font-size: 20px;
-      color: $white;
-      text-transform: uppercase;
-
-      // &::before {
-      //   content: attr(data-text);
-      //   position: absolute;
-      //   width: 0;
-      //   height: 100%;
-      //   color: $yellow;
-      //   border-right: 3px solid black;
-      //   overflow: hidden;
-      //   animation: animate 5s ease infinite;
-      //   white-space: nowrap;
-      // }
-
       &:hover {
         cursor: pointer;
       }

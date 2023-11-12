@@ -6,6 +6,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+h1 {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 20px;
+  margin: 0 0 0;
+  text-align: center;
+  text-transform: uppercase; }
+
 #root {
   overflow-y: auto;
   height: 100vh; }
@@ -14,6 +21,11 @@ a {
   text-decoration: none; }
   a:hover {
     text-decoration: underline; }
+
+.delimiter {
+  background-color: #ffffff;
+  width: 100%;
+  height: 1px; }
 
 .header {
   animation: dropHeader 0.5s ease-in-out;
@@ -58,15 +70,8 @@ a {
       display: none; }
     .header .navbar-container .navbar-side-container {
       display: none; }
-    .header .navbar-container .navbar-name {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      font-size: 20px;
-      color: #ffffff;
-      text-transform: uppercase; }
-      .header .navbar-container .navbar-name:hover {
-        cursor: pointer; }
+    .header .navbar-container .navbar-name:hover {
+      cursor: pointer; }
     @media only screen and (max-width: 840px) {
       .header .navbar-container .navbar-links-container {
         display: flex;
@@ -110,7 +115,8 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between; }
+  justify-content: space-between;
+  scroll-snap-align: start; }
   #home .content-container {
     display: flex;
     flex-direction: column;
@@ -119,16 +125,45 @@ a {
     width: 100%; }
 
 #about-me {
-  height: 100%; }
+  height: 100%;
+  scroll-snap-align: start; }
   #about-me .content-container {
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
     padding-top: 45px; }
+    #about-me .content-container .about-me-content {
+      margin: 0 20px 10px;
+      height: 100%; }
+      #about-me .content-container .about-me-content .my-image {
+        background-image: url("../../../assets/images/me.jpg");
+        height: 20rem;
+        width: 20rem;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-radius: 80% 20% 70% 30% / 30% 74% 26% 70%;
+        margin: 4rem 20px 0 0;
+        float: left;
+        shape-outside: ellipse(21% 57% at 77% 73%); }
+        @media only screen and (max-width: 840px) {
+          #about-me .content-container .about-me-content .my-image {
+            height: 20vh;
+            width: 40vw;
+            min-height: 15rem;
+            shape-outside: ellipse(26% 36% at 75% 64%);
+            margin-top: 6em; } }
+      #about-me .content-container .about-me-content .text-content p {
+        text-align: justify;
+        font-weight: 300; }
+      #about-me .content-container .about-me-content .text-content p:first-child {
+        font-weight: 600;
+        margin-bottom: 30px; }
 
 #projects {
-  height: 100%; }
+  height: 100%;
+  scroll-snap-align: start; }
   #projects .content-container {
     width: 100%;
     display: flex;
@@ -137,7 +172,8 @@ a {
     padding-top: 45px; }
 
 #contact-me {
-  height: 100%; }
+  height: 100%;
+  scroll-snap-align: start; }
   #contact-me .content-container {
     width: 100%;
     display: flex;
@@ -146,7 +182,28 @@ a {
     padding-top: 45px; }
 
 .main-container {
-  height: 100vh; }
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y proximity; }
+  .main-container .social-buttons {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; }
+  .main-container .social-icon {
+    width: 2rem;
+    transition: background-color 0.5s ease; }
+    .main-container .social-icon.linkedin {
+      width: 2.5rem;
+      border-radius: 20%; }
+    .main-container .social-icon.github {
+      padding: 5px;
+      border-radius: 50%; }
+  .main-container .social-icon:hover {
+    background-color: #ffffff; }
   .main-container .background {
     animation: slide 11s ease-in-out infinite alternate;
     background-image: linear-gradient(235deg, #121212 50%, #1e1e1e 50%);
