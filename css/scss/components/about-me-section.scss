@@ -38,6 +38,14 @@
         p {
           text-align: justify;
           font-weight: 300;
+
+          @media only screen and (max-width: 380px) {
+            font-size: 14px;
+          }
+
+          @media only screen and (max-width: 290px) {
+            font-size: 12px;
+          }
         }
 
         p:first-child {

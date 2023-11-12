@@ -157,6 +157,12 @@ a {
       #about-me .content-container .about-me-content .text-content p {
         text-align: justify;
         font-weight: 300; }
+        @media only screen and (max-width: 380px) {
+          #about-me .content-container .about-me-content .text-content p {
+            font-size: 14px; } }
+        @media only screen and (max-width: 290px) {
+          #about-me .content-container .about-me-content .text-content p {
+            font-size: 12px; } }
       #about-me .content-container .about-me-content .text-content p:first-child {
         font-weight: 600;
         margin-bottom: 30px; }
