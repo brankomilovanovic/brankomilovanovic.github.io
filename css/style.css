@@ -172,10 +172,61 @@ a {
   scroll-snap-align: start; }
   #projects .content-container {
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 45px; }
+  #projects .projects-container {
+    width: -webkit-fill-available;
+    justify-content: center;
+    padding: 20px 20px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    gap: 10px;
+    -ms-overflow-style: none;
+    scrollbar-width: none; }
+    #projects .projects-container::-webkit-scrollbar {
+      display: none; }
+    #projects .projects-container .project-item {
+      display: flex;
+      flex-direction: column;
+      width: 200px;
+      padding: 15px 30px;
+      border-radius: 20px;
+      border: 2px solid transparent; }
+      @media only screen and (max-width: 840px) {
+        #projects .projects-container .project-item {
+          width: 300px; } }
+      #projects .projects-container .project-item .project-item-cover {
+        width: 200px;
+        height: 200px;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: contain; }
+        @media only screen and (max-width: 840px) {
+          #projects .projects-container .project-item .project-item-cover {
+            width: 300px; } }
+      #projects .projects-container .project-item:hover {
+        background-color: rgba(0, 0, 0, 0.3);
+        border: 2px solid rgba(228, 228, 14, 0.5);
+        cursor: pointer; }
+      #projects .projects-container .project-item .project-item-data {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: space-between; }
+        #projects .projects-container .project-item .project-item-data p {
+          margin: 0; }
+        #projects .projects-container .project-item .project-item-data .title {
+          font-size: 20px;
+          font-weight: 600;
+          margin: 10px 0; }
+        #projects .projects-container .project-item .project-item-data .check-out {
+          margin-top: 10px;
+          text-align: center;
+          color: #e4e40e; }
 
 #contact-me {
   height: 100%;
@@ -228,6 +279,7 @@ a {
     #contact-me .contact-form .form-group textarea {
       margin-top: 2px;
       width: -webkit-fill-available;
+      max-height: 350px;
       padding: 12px;
       font-size: 16px;
       border: 1px solid #ddd;
